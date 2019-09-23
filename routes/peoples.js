@@ -114,7 +114,7 @@ router.get('/', function(req, res, next) {
     }
   ];
   res.render('peoples', {
-    title: 'peoples?girls',
+    title: 'peoplesgirls',
     girls: girls
   });
   next();
