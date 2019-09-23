@@ -1,0 +1,60 @@
+//невьехал в струкруту статусов: активный, прочтенный, офлайн?, есть сообщение...
+
+
+
+.contact
+    .contact__title  Contacts
+
+    each item, i in girls
+        .row
+            if item.online
+                .contact__item.contact__item-on
+                    img(src=item.link)
+            else
+                .contact__item.contact__item-off
+                    img(src=item.link)
+
+            .contact__body
+                h4 #{item.name}, #{item.age}
+                if item.online
+                    p What would you lik...
+                else
+                    p.text-grey What would you lik...
+
+            if item.videos
+                .contact__info
+                    span #{item.videos}
+
+
+    .row
+        .contact__item.contact__item-on
+            img(src='/images/sidebar/photo-1.png')
+        .contact__body
+            h4 Sofia, 28
+            p.mail What would you lik...
+        if true
+        .contact__counter
+            .btn.btn__green.btn__green-smoll Reply
+
+
+
+.contact.requests
+    .contact__title  Requests
+        .contact__select
+            div Show more
+
+    .row
+        .contact__item.contact__item-on
+            img(src='/images/sidebar/photo-1.png')
+        .contact__body
+            h4 Sofia, 28
+            p What would you lik...
+        if true
+        .contact__counter
+            .btn.btn__green.btn__green-smoll Reply
+
+
+
+
+
+

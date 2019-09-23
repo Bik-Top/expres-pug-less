@@ -1,0 +1,81 @@
+
+.icon {
+  span {
+    margin-left: 5px;
+  }
+
+  &.icon__search {
+    display: flex;
+    align-items: center;
+    color: @color-second__text;
+
+    font-style: normal;
+    justify-content: center;
+
+    span {
+      margin-left: 11px;
+      text-decoration: underline;
+      //background: #f0f;
+    }
+
+    &:before {
+      content: '';
+      width: 19.2px;
+      height: 16.8px;
+      display: inline-block;
+      background: url("../../images/icons/search.svg") no-repeat center;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      span {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.icon__photo {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      width: 19.2px;
+      height: 16.8px;
+      display: inline-block;
+      background: url("../../images/icons/photo.svg") no-repeat center;
+    }
+  }
+
+  &.icon__video {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      width: 19.2px;
+      height: 16.8px;
+      display: inline-block;
+      background: url("../../images/icons/video.svg") no-repeat center;
+    }
+  }
+
+  &.icon__circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+  }
+
+  &.icon__circle-on {
+    background-color: @bg-btn__green;
+  }
+
+  &.icon__circle-off {
+    background-color: @bg-notificator-count__tomat;
+  }
+
+}
+

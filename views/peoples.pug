@@ -1,0 +1,30 @@
+extends layout
+
+block appContent
+    .wrapper.contain.wrapper-grey
+        .main
+            .filters
+                i.icon.icon__search
+                    span Set search parameters
+            .peoples-page
+                each item, i in girls
+                    a.card(href="/peoples/"+ item.id)
+                        .card__header
+                            if item.photos
+                                i.icon.icon__photo
+                                    span #{item.photos}
+                            if item.videos
+                                i.icon.icon__video
+                                    span #{item.videos}
+                        img.card__picture(src= item.link)
+                        .card__footer
+                            h3 #{item.name}, #{item.age}
+                            if item.online
+                                i.icon.icon__circle.icon__circle-on
+                            else
+                                i.icon.icon__circle.icon__circle-off
+        .sidebar.animated.slideInRight
+            include sidebar
+
+
+

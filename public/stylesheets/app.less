@@ -1,0 +1,176 @@
+
+body, html {
+  height: 100%;
+}
+body {
+  font: normal 14px/normal 'Roboto', sans-serif;
+  color: @color-first__text;
+  background-color: @bg-page__first;
+  padding: 0;
+  margin: 0;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+
+  &-grey {
+    background-color: @bg-page__second;
+  }
+
+  & > * {
+    flex: 1 100%;
+  }
+}
+.contain{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+.sidebar {
+  margin-top: 24px;
+  height: 25vh;
+  display: inline-table;
+  min-height: 200px;
+  background-color: @bg-page__second;
+  border-radius: 10px;
+  &.active{
+    display: none;
+    margin-top: 24px;
+    top: 5%;
+    height: 25vh;
+    min-height: 200px;
+    position: -webkit-sticky;
+    position: sticky;
+    background-color:  @bg-icon-letter__blue;
+    border-radius: 10px;
+    transition: 600ms;
+
+  }
+}
+.text-grey{
+  color:@color-second__text ;
+}
+
+
+
+.filters {
+  display: flex;
+  justify-content: center;
+  padding: 28px 0;
+}
+
+.peoples-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*.peoples-page {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  grid-row-gap: 15px;
+  grid-column-gap: 10px;
+  margin: 0;
+  padding: 20px 5px;
+}*/
+
+
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    position: absolute;
+    top: -1000vh;
+  }
+}
+
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    display: inline-table;
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+
+
+
+
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+
+
+
+
+
+@media all and (min-width: 320px) {
+  .peoples-page {
+    justify-content: center;
+  }
+}
+@media all and (min-width: 600px) {
+
+  .main{
+    flex: 3 256px;
+    order: 2;
+  }
+  .sidebar {
+    order: 1;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .peoples-page {
+    justify-content: flex-start;
+  }
+
+  .sidebar {
+    flex: 1 2 0;
+  }
+  .main    {
+    flex: 3 256px;
+    order: 1;
+  }
+  .sidebar {
+    order: 2;
+  }
+}
+
+
+
+

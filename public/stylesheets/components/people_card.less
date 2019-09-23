@@ -1,0 +1,71 @@
+@keyframes animatPuls {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+.card {
+  position: relative;
+  background-color: @bg-page__first;
+  border-radius: 10px;
+  margin: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color:  @color-first__text;
+
+
+  &:active {
+    animation-name: animatPuls;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+  &:hover:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    animation-name: animatPuls;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+
+  &__header {
+    position: absolute;
+    top: 12px;
+    color:  @bg-page__first;
+    left: 12px;
+  }
+
+  &__picture {
+    width: 100%;
+    height: auto;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 14px 0 16px;
+    text-decoration: none;
+  }
+
+}

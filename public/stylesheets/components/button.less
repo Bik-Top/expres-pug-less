@@ -1,0 +1,28 @@
+.btn{
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+
+
+  flex: 1 auto;
+  &&__green{
+    background-color: @bg-btn__green;
+    color: @color-third__text;
+    &-smoll{
+      font-family: Roboto Medium;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 6px 13px;
+      border-radius: 4px;
+    }
+  }
+  &:hover{
+    background-color: spin(lighten(@bg-btn__green, 25%), 8);
+  }
+  &:active{
+    background-color: saturate(@bg-btn__green, 5%);
+  }
+}
